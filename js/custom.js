@@ -74,91 +74,6 @@ var granimInstance = new Granim({
     }
 });
 
-//selectedHTML caution!!! must synchronize with index.html
-var selectedHTML =  `
-			  <div class="col-md-2"><font>2013 Fall</font></div>
-			  <div class="col-md-10"><font class="bold">C-- Compiler (lex, YACC, C)</font></div>
-			  <div class="col-12">
-				  <ul>
-					  <li>
-						 A C-- compiler is implemented with following features:
-						 <ul>
-							 <li>
-								 Implicit type conversions, Assignment statements, Arithmetic expressions, Control statements(while, if-then-else, for), Procedure calls, Read and Write I/O calls, Short-circuit boolean expressions, Variable initializations, Multiple dimensional arrays.
-							 </li>
-						 </ul>
-					  </li>
-				  </ul>
-			  </div>
-			  <div class="col-md-2"><font>2014 Spring</font></div>
-			  <div class="col-md-10"><font class="bold">Virtual Machine Experiments (C/C++, Qemu, KVM)</font></div>
-			  <div class="col-12">
-				  <ul>
-					  <li>
-						  Implementation of <i>Shadow Stack</i> on qemu-0.13 to improve indirect brach handling routines.
-					  </li>
-					  <li>
-						  Analyzation of mulitple virtual machines (Qemu) behaviors on KVM.
-					  </li>
-					  <ul>
-						  <li>
-							  <a href="http://www.bitmover.com/lmbench/">LMbench</a> is applied to analyze the memory interferences between VMs.
-						  </li>
-					  </ul>
-				  </ul>
-			  </div>
-			  <div class="col-md-2"><font>2014 Fall</font></div>
-			  <div class="col-md-10"><font class="bold">Enhanced DRAM Scheduling (C/C++)</font></div>
-			  <div class="col-12">
-				  <ul>
-					  <li>
-						  Experimental Platform: 
-							<ul>
-								<li>
-									<a href="https://github.com/pranith/usimm">Simulator: USIMM: the Utah SImulated Memory Module</a> and its modified <a href="http://parsec.cs.princeton.edu/">PARSEC</a> traces
-								</li>
-							</ul>
-					  </li>
-					  <li>
-						  An enhanced DRAM scheduling policy is proposed
-						  <ul>
-							  <li>
-								  Row Hit Aware: Serve row hit request first and apply close page when no remaining row hit requests.
-							  </li>
-							  <li>
-								  No Idle Read/Write mode: Issue write/read at idle time during read/write mode due to dependencies.
-							  </li>
-							  <li>
-								  Thread Aware: Serve compute-intensive requests first to make CPU fully utilized and reduce memory interferences.
-							  </li>
-						  </ul>
-					  </li>
-				  </ul>
-			  </div>
-			  <div class="col-md-2"><font>2015 Spring</font></div>
-			  <div class="col-md-10"><font class="bold">Application Scheduling on Heterogeneous System (OpenCL, bash)</font></div>
-			  <div class="col-12">
-				  <ul>
-					  <li>
-						  Experimental Platform: 
-						   <ul>
-							   <li>
-								   Hardware: AMD Kaveri APU (A10-7850K), Heterogeneous Unified Memory Architecture (hUMA)
-							   </li>
-							   <li>
-								   Operating System: Ubuntu 14.04 LTS | Driver: AMD Catalyst Driver
-							   </li>
-						   </ul>
-					  </li>
-					  <li>
-						  Analyzation of different behaviors on CPU and GPU of benchmarks from <a href="http://impact.crhc.illinois.edu/parboil/parboil.aspx:">parboil</a> and <a href="http://www.cs.virginia.edu/~skadron/wiki/rodinia/index.php/Rodinia:Accelerating_Compute-Intensive_Applications_with_Accelerators">rodinia suits</a>
-					  </li>
-					  <li>
-						  A two-stage scheuling method is proposed to reduce memory interferences and balance execution time of CPU and GPU
-					  </li>
-				  </ul>
-			  </div>
-`;
 
 var othersHTML = `
 			  <div class="col-md-2"><font>2012 Fall</font></div>
@@ -169,7 +84,7 @@ var othersHTML = `
 						  	For the not completed data of 71 features, imputing methods (KNN, SVD) are applied. 
 						</li>
 					  	<li>
-							To predict click or not click, the binary classification learning models (SDG, rankboost and SVM) are applied and analyzed by AUC of ROC curve.
+							To predict click/not click, binary classification learning models (SDG, rankboost and SVM) are applied and analyzed by AUC of ROC curve.
 						</li>
 				  </ul>
 			  </div>
@@ -178,7 +93,18 @@ var othersHTML = `
 			  <div class="col-12">
 				  <ul>
 					  <li>
-						  A horizontal game framework which can show talking dialogs, cast skill animations and control character motions with falling gravity and background changing
+						  A single thread horizontal game framework with following features:
+							<ul>
+								<li>
+									Story with talking dialogs and different backgrounds
+								</li>
+								<li>
+									Skill/Monster animations and character motions with gravity effects
+								</li>
+								<li>
+									Load story/map/mission from json format files without re-compilation	
+								</li>
+							</ul>
 					  </li>
 				  </ul>
 			  </div>
@@ -187,7 +113,18 @@ var othersHTML = `
 			  <div class="col-12">
 				  <ul>
 					  <li>
-						  A stereoscopic 3D image application from a single image by analyzing the vanishing line, detecting the semantic regions and computing the depth of the image
+						  A stereoscopic 3D image application from a single image by 3 steps:
+							<ul>
+								<li>
+									Do color segmentation and detect semantic regions(sky, mountain, land, other) by machine learning model (SVM) 
+								</li>
+								<li>
+									Detect the vanishing lines by sobel edge detection and variation of edge slopes
+								</li>
+								<li>
+									Generate the depth map of the image from vanishing lines and combine all above data to a stereoscopic 3D image
+								</li>
+							</ul>
 					  </li>
 				  </ul>
 			  </div>
@@ -196,9 +133,34 @@ var othersHTML = `
 			  <div class="col-12">
 				  <ul>
 					  <li>
-						  Energy disaggregation and appliance classification with Logistic Regression, SVM and HMM on Hadoop cluster
+						  Experimental Platform: 
+						<ul>
+					  <li>
+						 A remote Hadoop cluster with 3 computers (2 are virtual machine): Linux Ubuntu 12.04, 20GB disk, 1G/4G/8G RAM, 1/2/4 core 
 					  </li>
+						</ul>
+						</li>
+						<li>
+							Energy disaggregation and appliance classification with Logistic Regression, SVM and HMM on the Hadoop cluster
+						<ul>
+						<li>
+							To classify multiple appliancs, one-vs-all thought is applied for binary classification model (SVM).
+						</li>
+						</ul>
+						</li>
 				  </ul>
+			  </div>
+			  <div class="col-md-2"><font>2013 Fall</font></div>
+			  <div class="col-md-10"><font class="bold"><a href="https://github.com/haku/Onosendai">Onosendai</a> twitter android app analysis (Android, Java)</font></div>
+			  <div class="col-12">
+					<ul>
+						<li>
+							Whole project class diagrams are analyzed and drew.
+						</li>
+						<li>
+							Based on the class diagrams, color scheme changing and sorting posts functions are implemented into this app.	
+						</li>
+					</ul>
 			  </div>
 			  <div class="col-md-2"><font>2014 Spring</font></div>
 			  <div class="col-md-10"><font class="bold">Grapage (Javascript, HTML/CSS)</font></div>
@@ -226,6 +188,17 @@ var othersHTML = `
 				  <ul>
 					  <li>
 						  A color harmonization application that making a picture transform its own colors like a digital chameleon in real time
+						<ul>
+							<li>
+								Surrounding images are captured from main camera of a laptop
+							</li>
+							<li>
+								Harmonic color wheel template is computed from down-scaled surrounding image
+							</li> 
+							<li>
+								Depending on the harmonic color wheel, picture colors are shifted to fit surrounding environmets.
+							</li>
+						</ul>
 					  </li>
 				  </ul>
 			  </div>
@@ -233,6 +206,7 @@ var othersHTML = `
 
 
 var flip = false;
+var selectedHTML = $("#pHTML").html(); 
 
 function flipIt() {
 	if (flip === false) {
