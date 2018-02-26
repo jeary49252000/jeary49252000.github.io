@@ -77,7 +77,7 @@ var granimInstance = new Granim({
 
 var othersHTML = `
 			  <div class="col-md-2"><font>2012 Fall</font></div>
-			  <div class="col-md-10"><font class="bold">Ads Click Rate Prediction (C/C++, Matlab)</font></div>
+			  <div class="col-md-10"><font class="bold">Ads Click Rate Prediction on Not Completed Data (C/C++, Matlab)</font></div>
 			  <div class="col-12">
 				  <ul>
 						<li>
@@ -102,27 +102,27 @@ var othersHTML = `
 									Skill/Monster animations and character motions with gravity effects
 								</li>
 								<li>
-									Load story/map/mission from json format files without re-compilation	
+									Loading story/map/mission from json format files without re-compilation	
 								</li>
 							</ul>
 					  </li>
 				  </ul>
 			  </div>
 			  <div class="col-md-2"><font>2013 Spring</font></div>
-			  <div class="col-md-10"><font class="bold">Stereoscopic 3D Image by Single Image (C/C++)</font></div>
+			  <div class="col-md-10"><font class="bold">Stereoscopic 3D Image from Single Image (C/C++)</font></div>
 			  <div class="col-12">
 				  <ul>
 					  <li>
 						  A stereoscopic 3D image application from a single image by 3 steps:
 							<ul>
 								<li>
-									Do color segmentation and detect semantic regions(sky, mountain, land, other) by machine learning model (SVM) 
+									Do color segmentation and detect semantic regions (sky, mountain, land, other) by machine learning model (SVM).
 								</li>
 								<li>
-									Detect the vanishing lines by sobel edge detection and variation of edge slopes
+									Detect vanishing lines by Sobel edge detection and variation of edge slopes.
 								</li>
 								<li>
-									Generate the depth map of the image from vanishing lines and combine all above data to a stereoscopic 3D image
+									Generate depth map of the image from the vanishing lines and combine all above data to a stereoscopic 3D image.
 								</li>
 							</ul>
 					  </li>
@@ -136,7 +136,7 @@ var othersHTML = `
 						  Experimental Platform: 
 						<ul>
 					  <li>
-						 A remote Hadoop cluster with 3 computers (2 are virtual machine): Linux Ubuntu 12.04, 20GB disk, 1G/4G/8G RAM, 1/2/4 core 
+						 A remote Hadoop cluster with 3 computers (2 are virtual machine): Linux Ubuntu 12.04, 20GB disk, 1G/4G/8G RAM, 1/2/4 cores
 					  </li>
 						</ul>
 						</li>
@@ -144,7 +144,7 @@ var othersHTML = `
 							Energy disaggregation and appliance classification with Logistic Regression, SVM and HMM on the Hadoop cluster
 						<ul>
 						<li>
-							To classify multiple appliancs, one-vs-all thought is applied for binary classification model (SVM).
+							To classify multiple appliances, one-vs-all thought is applied for binary classification model (SVM).
 						</li>
 						</ul>
 						</li>
@@ -170,7 +170,7 @@ var othersHTML = `
 						  A chrome extension to help people take notes on web pages with following features:
 							<ul>
 								<li>
-									Hightlight sentences
+									Highlight sentences
 								</li>
 								<li>
 									Edit/Delete color or font-style of words and other elements
@@ -190,13 +190,13 @@ var othersHTML = `
 						  A color harmonization application that making a picture transform its own colors like a digital chameleon in real time
 						<ul>
 							<li>
-								Surrounding images are captured from main camera of a laptop
+								Surrounding images are captured from main camera of a laptop.
 							</li>
 							<li>
-								Harmonic color wheel template is computed from down-scaled surrounding image
+								Harmonic color wheels are computed from down-scaled surrounding images.
 							</li> 
 							<li>
-								Depending on the harmonic color wheel, picture colors are shifted to fit surrounding environmets.
+								Depending on the harmonic color wheel, picture colors are shifted to fit surrounding environments.
 							</li>
 						</ul>
 					  </li>
